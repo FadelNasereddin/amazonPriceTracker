@@ -13,12 +13,13 @@ soup=bs(page.content, "html.parser")
 
 sender= 'amazonPriceTracker1010@gmail.com'
 password='avhbkcuorkvhhyzb'
-def price_checker():
-title= soup.find(id='productTitle').get_text()
-price= soup.find(id='priceblock_ourprice').get_text()
-clean_price= price[3:8]
 
-if clean_price < 130:
+def price_checker():
+    title = soup.find(id='productTitle').get_text()
+    price= soup.find(id='priceblock_ourprice').get_text()
+    clean_price= price[3:8]
+    print(title)
+    if clean_price < 130:
     send_mail()
 
 
